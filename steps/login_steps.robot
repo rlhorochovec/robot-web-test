@@ -24,6 +24,4 @@ Então apresentará uma mensagem de "${message}"
     ${erro}    Get Text    ${mensagem}
     Should Be Equal As Strings    ${erro}    ${message}
     Capture Page Screenshot
-
-Fechar Navegador
     Close Browser
