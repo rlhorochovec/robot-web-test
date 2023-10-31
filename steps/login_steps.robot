@@ -23,5 +23,4 @@ Quando inserir o login "${login}" e a senha "${password}" e clicar em Entrar
 Então apresentará uma mensagem de "${message}"
     ${erro}    Get Text    ${mensagem}
     Should Be Equal As Strings    ${erro}    ${message}
-    Capture Page Screenshot
     Close Browser
