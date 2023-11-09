@@ -1,4 +1,4 @@
-name: Robot Framework
+name: robot-web-test
 
 on:
   push:
@@ -14,11 +14,11 @@ jobs:
         env:
           BROWSER: chrome
           ROBOT_TESTS_DIR: ${{ github.workspace }}
-          ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+          ROBOT_REPORTS_DIR: ${{ github.workspace }}/report
       
       - name: Upload test results
         uses: actions/upload-artifact@v1
         if: always()
         with:
           name: reports
-          path: ${{ github.workspace }}/reports
+          path: ${{ github.workspace }}/report
