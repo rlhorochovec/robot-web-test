@@ -24,9 +24,9 @@ jobs:
             pip install -r requirement.txt
             pip install django-robots
         - name: Run Test
-          run: python -m robot --outputdir results testcases/functional_tests
+          run: python -m robot --outputdir results
         - name: Run Test and create report
-          run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
+          run: python -m robot -d reports -x junit-report.xml ""
         - name: Run Robot Framework tests and generate report
           run: |
              echo "ROBOT_RC=$?" >> "$GITHUB_ENV"  
