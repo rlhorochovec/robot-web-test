@@ -1,6 +1,11 @@
 # robot-web-test
 Projeto de automação de testes web utilizando Robot Framework.
 
+## Dependências
+- Python 3.10.12
+- Robot Framework: 6.1.1
+- pip: 22.0.2
+
 ## Instalação
 Instale robot-web-test com pip
 
@@ -9,11 +14,6 @@ Instale robot-web-test com pip
   pip install robotframework
   pip install robotframework-seleniumlibrary
 ```
-    
-## Dependências
-- Python 3.10.12
-- Robot Framework: 6.1.1
-- pip: 22.0.2
 
 ## Rodando os testes
 Para rodar os testes, rode o seguinte comando
