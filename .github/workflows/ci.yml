@@ -1,4 +1,4 @@
-name: Robot Framework CI
+name: Run-Test
 
 on:
   push:
@@ -13,13 +13,47 @@ jobs:
       steps:
         - name: Checkout repository
           uses: actions/checkout@v1
+        - uses: actions/cache@v2
+          id: cache
+          with:
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirement.txt') }}
+        - name: Install pip dependencies
+          run: |
+            pip install --upgrade pip
+            pip install -r requirement.txt
+            pip install django-robots
+        - name: Run Test
+          run: python -m robot --outputdir results testcases/functional_tests
         - name: Run Test and create report
-          run: python -m robot -d report
+          run: python -m robot -d reports -x junit-report.xml "testcases/functional_tests"
         - name: Run Robot Framework tests and generate report
           run: |
-             echo "ROBOT_RC=$?" >> "$GITHUB_ENV"
+             echo "ROBOT_RC=$?" >> "$GITHUB_ENV"  
+        # - name: If Auto Test Pass Rate Not 100%, Job Will Fail
+        #   if: env.ROBOT_RC != '0'
+        #   run: |
+        #     echo "Auto Test Pass Rate Not 100%, Please Check Test Result"
+        #     exit 1
         - name: Publish test results
           uses: actions/upload-artifact@v2
           with:
             name: robot-test-results
             path: results
+        - name: Setup Python
+          if: always()
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.10' 
+        - name: Execute TestRail CLI to upload results
+          if: always()
+          run: |
+            pip install trcli 
+            trcli -y \
+              -h "https://piyathida.testrail.io" \
+              --project "API_Test" \
+              --username "Piyathida.sanaoun01@gmail.com" \
+              --password "Zxcv@121416" \
+              parse_junit \
+              --title "Robot Framework Automated Tests" \
+              -f "reports/junit-report.xml"\
