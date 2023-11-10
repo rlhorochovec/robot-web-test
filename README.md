@@ -26,5 +26,4 @@ Para rodar os testes, rode o seguinte comando
 ./report/report.html
 
 ## Screenshots
-<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/report.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/report_scenarios.png" width="400" />
-<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/log.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/log_scenarios.png" width="400" />
+<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/report.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/log.png" width="400" />
