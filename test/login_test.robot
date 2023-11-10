@@ -1,6 +1,6 @@
 *** Settings ***
-Resource         steps/login_steps.robot
-Resource         steps/home_steps.robot
+Resource         ../steps/login_steps.robot
+Resource         ../steps/home_steps.robot
 
 *** Test Cases ***
 Cenário: Login - Usuário e/ou senha incorretos!
