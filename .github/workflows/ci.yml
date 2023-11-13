@@ -13,7 +13,6 @@ jobs:
           run: mkdir reports
         - name: test
           run: |
-            mkdir ${{github.workspace}}/reports
             docker run --shm-size=1g -e BROWSER=headlesschrome \
             -v ${{github.workspace}}/e2e:/opt/robotframework/tests:Z \
             -v ${{github.workspace}}/reports:/opt/robotframework/reports:Z \
