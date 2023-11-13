@@ -37,7 +37,7 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
-            path: /opt/robotframework/reports
+            path: /home/runner/work/robot-web-test/robot-web-test/reports
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v2.3
           with:
