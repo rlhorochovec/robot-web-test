@@ -43,5 +43,5 @@ jobs:
             GH_ACCESS_TOKEN: ${{ github.TOKEN }}
             REPO_OWNER: ${{ github.REPOSITORY_OwNER }}
             COMMIT_SHA: ${{ github.SHA }}
-            REPOSITORY: ${{ env.REPOSITORY_NAME }}
+            REPOSITORY: ${{ github.GITHUB_ENV }}
             REPORT_PATH: ${{ github.workspace }}/reports
