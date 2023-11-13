@@ -37,6 +37,7 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
+            path: ${{github.workspace}}/reports
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v2.3
           with:
