@@ -19,13 +19,6 @@ jobs:
             -v ${{github.workspace}}/steps:/opt/robotframework/steps:Z \
             --user 1001:1000 \
             ppodgorsek/robot-framework:latest
-
-        - name: Upload test results
-          uses: actions/upload-artifact@v1
-          if: always()
-          with:
-            name: reports
-            path: ${{ github.workspace }}/reports
         
         - name: Upload reports
           uses: actions/upload-artifact@v1
@@ -35,12 +28,14 @@ jobs:
           # set path to Robot Framework results reports. Exclude dummy file that is needed because of ppodgorsek image privileges.
             path: ${{ github.workspace }}/reports
           # repository name is needed for posting test report in the next step
+        
         - name: Get Repository Name
           run: |
             export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
             echo ::set-env:: name=REPOSITORY_NAME::$REPO
             # when test are run for a commit, post results as a comment
             # note: comment is not posted for tests triggered for pull requests, only for a main branch (master)
+        
         - name: Send test report as comment to commit
           uses: joonvena/robotframework-reporter-action@v0.1
           env:
