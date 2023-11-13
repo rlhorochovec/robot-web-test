@@ -2,7 +2,7 @@ name: robot-web-test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
     test:
@@ -12,11 +12,13 @@ jobs:
         - name: Create folder for reports
           run: mkdir reports
         - name: Execute tests
-          uses: joonvena/robotframework-docker-action@v0.1
-          env:
-            BROWSER: chrome
-            ROBOT_TESTS_DIR: /test
-            ROBOT_REPORTS_DIR: /report
+          run: |
+            docker run
+            -v ${PWD}/reports:/opt/robotframework/reports:Z
+            -v ${{ github.workspace }}/:/opt/robotframework/tests:Z
+            --user 
+            (id -g)
+            ppodgorsek/robot-framework:latest
         - name: Upload test results
           uses: actions/upload-artifact@v1
           if: always()
