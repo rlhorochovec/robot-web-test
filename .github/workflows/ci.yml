@@ -38,6 +38,8 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
+            path: ${{ github.workspace }}/reports
+            
         - name: Get Repository Owner & Name
           run: |
             export OWNER="$(echo "${{ github.repository }}" | awk -F / '{print $1}' | sed -e "s/:refs//")"
@@ -45,7 +47,8 @@ jobs:
             #echo "::set-env name=REPOSITORY_OWNER::$OWNER"
             #echo "::set-env name=REPOSITORY_NAME::$REPO"
             echo "REPOSITORY_NAME=$?" >> "$REPO"  
-            echo "REPOSITORY_OWNER=$?" >> "$OWNER"  
+            echo "REPOSITORY_OWNER=$?" >> "$OWNER"
+            
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v0.1
           env:
