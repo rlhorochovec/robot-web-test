@@ -11,13 +11,13 @@ jobs:
         - uses: actions/checkout@v2
         - name: Create folder for reports
           run: mkdir reports
-        - name: Execute tests
+        - name: test
           run: |
-            docker run
-            -v ${PWD}/reports:/opt/robotframework/reports:Z
-            -v ${{ github.workspace }}/:/opt/robotframework/tests:Z
-            --user 
-            (id -g)
+            mkdir ${{github.workspace}}/reports
+            docker run --shm-size=1g -e BROWSER=headlesschrome \
+            -v ${{github.workspace}}/e2e:/opt/robotframework/tests:Z \
+            -v ${{github.workspace}}/reports:/opt/robotframework/reports:Z \
+            --user 1001:1000 \
             ppodgorsek/robot-framework:latest
         - name: Upload test results
           uses: actions/upload-artifact@v1
