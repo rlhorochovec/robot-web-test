@@ -5,40 +5,42 @@ on:
     branches: [ main ]
 
 jobs:
-    test:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Create folder for reports
-          run: mkdir reports
-        - name: Run test
-          run: |
-            docker run --shm-size=1g -e BROWSER=headlesschrome \
-            -v ${{github.workspace}}/test:/opt/robotframework/tests:Z \
-            -v ${{github.workspace}}/report:/opt/robotframework/reports:Z \
-            -v ${{github.workspace}}/steps:/opt/robotframework/steps:Z \
-            --user 1001:1000 \
-            ppodgorsek/robot-framework:latest
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
         
-        - name: Upload reports
-          uses: actions/upload-artifact@v1
-          if: always()
-          with:
-            name: reports
-            path: reports
-    
-    generate_report:
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create folder for reports
+        run: mkdir reports
+      - name: Run test
+        run: |
+          docker run --shm-size=1g -e BROWSER=headlesschrome \
+          -v ${{github.workspace}}/test:/opt/robotframework/tests:Z \
+          -v ${{github.workspace}}/report:/opt/robotframework/reports:Z \
+          -v ${{github.workspace}}/steps:/opt/robotframework/steps:Z \
+          --user 1001:1000 \
+          ppodgorsek/robot-framework:latest
+      
+      - name: Upload reports
+        uses: actions/upload-artifact@v1
         if: always()
-        needs: [test] 
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: Download reports
-          uses: actions/download-artifact@v1
-          with:
-            name: reports
-            path: /home/runner/work/robot-web-test/robot-web-test/reports
-        - name: Send report to commit
-          uses: joonvena/robotframework-reporter-action@v2.3
-          with:
-            gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          name: reports
+          path: reports
+    
+  generate_report:
+      if: always()
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Download reports
+        uses: actions/download-artifact@v1
+        with:
+          name: reports
+      - name: Send report to commit
+        uses: joonvena/robotframework-reporter-action@v2.3
+        with:
+          gh_access_token: ${{ secrets.GITHUB_TOKEN }}
