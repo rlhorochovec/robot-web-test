@@ -25,7 +25,7 @@ jobs:
           if: always()
           with:
             name: reports
-            path: ${{github.workspace}}/reports
+            path: reports
     
     generate_report:
         if: always()
@@ -37,7 +37,7 @@ jobs:
           uses: actions/download-artifact@v1
           with:
             name: reports
-            path: ${{github.workspace}}/reports
+            path: reports
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v2.3
           with:
