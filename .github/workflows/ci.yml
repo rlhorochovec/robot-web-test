@@ -14,8 +14,8 @@ jobs:
         - name: test
           run: |
             docker run --shm-size=1g -e BROWSER=headlesschrome \
-            -v ${{github.workspace}}/test:/opt/robotframework/test:Z \
-            -v ${{github.workspace}}/report:/opt/robotframework/report:Z \
+            -v ${{github.workspace}}/test:/opt/robot-web-test/test:Z \
+            -v ${{github.workspace}}/report:/opt/robot-web-test/report:Z \
             --user 1001:1000 \
             ppodgorsek/robot-framework:latest
         - name: Upload test results
