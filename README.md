@@ -16,7 +16,6 @@ Instale robot-web-test com pip
   pip install robotframework
   pip install robotframework-seleniumlibrary
 ```
-
 ## Rodando os testes
 Para rodar os testes, rode o seguinte comando
 
@@ -26,6 +25,9 @@ Para rodar os testes, rode o seguinte comando
 
 ## Relatório dos testes
 ./report/report.html
+
+## Demonstração
+[Assistir vídeo da execução](https://youtu.be/Okg_H1dS9pU)
 
 ## Screenshots
 <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/report.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/log.png" width="400" />
