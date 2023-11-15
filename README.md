@@ -1,7 +1,7 @@
 # robot-web-test
 [![robot-web-test](https://github.com/rlhorochovec/robot-web-test/actions/workflows/ci.yml/badge.svg)](https://github.com/rlhorochovec/robot-web-test/actions/workflows/ci.yml)
 
-Projeto de automação de testes web utilizando Robot Framework, GitHubAcitons e enviando os dados da execução para o Grafana.
+Projeto de automação de testes web utilizando Robot Framework, GitHubAcitons e Grafana.
 
 ## Dependências
 - Python 3.10.12
@@ -39,15 +39,17 @@ Para enviar os resultados para o Grafana, rode o seguinte comando
 
 ## Relatório dos testes
 Acessando o Grafana
+```bash
 http://localhost:3000/
 Login: admin
 Senha: admin
+```
 
 ## Relatório dos testes
 ./report/report.html
 
 ## Demonstração
-[Assistir vídeo da execução](https://youtu.be/Okg_H1dS9pU)
+[Assistir vídeo da execução](https://youtu.be/Okg_H1dS9pU)<br />
 [Assistir vídeo da execução e dados no Grafana](https://youtu.be/MwuQRMd4wBk)
 
 ## Screenshots
