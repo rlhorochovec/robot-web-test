@@ -38,3 +38,9 @@ Cenário: Login - User
     Dado que desejo acessar o sistema
     Quando inserir o login "user" e a senha "user" e clicar em Entrar
     Então apresentará a home do "Usuário"
+
+Cenário: Login - User (Failed)
+    [Tags]    @Failed
+    Dado que desejo acessar o sistema
+    Quando inserir o login "user" e a senha "user" e clicar em Entrar
+    Então apresentará a home do "FALHA PROPOSITAL"

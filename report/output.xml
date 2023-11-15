@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231110 15:35:47.798" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20231115 11:16:22.371" rpa="false" schemaversion="4">
 <suite id="s1" name="Login Test" source="/home/xovec/code-workspace/robot-web-test/test/login_test.robot">
 <test id="s1-t1" name="Cenário: Login - Usuário e/ou senha incorretos!" line="6">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -7,32 +7,66 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:35:48.024" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:35:56.905" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:35:56.905" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:35:48.024" endtime="20231110 15:35:56.960"/>
+<msg timestamp="20231115 11:16:22.596" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:22.596" endtime="20231115 11:16:25.649"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:56.960" endtime="20231110 15:35:56.960"/>
+<status status="PASS" starttime="20231115 11:16:25.650" endtime="20231115 11:16:25.756"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:56.960" endtime="20231110 15:35:56.960"/>
+<msg timestamp="20231115 11:16:25.766" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:25.756" endtime="20231115 11:16:25.766"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:35:48.023" endtime="20231110 15:35:56.961"/>
+<status status="PASS" starttime="20231115 11:16:22.595" endtime="20231115 11:16:25.766"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;admin&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:35:56.961" endtime="20231110 15:35:56.961"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:25.768" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:25.767" endtime="20231115 11:16:25.947"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:25.949" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:25.948" endtime="20231115 11:16:26.069"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:26.070" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:26.069" endtime="20231115 11:16:26.144"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:25.766" endtime="20231115 11:16:26.144"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Usuário e/ou senha incorretos!&quot;" library="login_steps" sourcename="Então apresentará uma mensagem de &quot;${message}&quot;">
-<status status="NOT RUN" starttime="20231110 15:35:56.961" endtime="20231110 15:35:56.961"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${erro}</var>
+<arg>${mensagem}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:26.189" level="INFO">${erro} = Usuário e/ou senha incorretos!</msg>
+<status status="PASS" starttime="20231115 11:16:26.145" endtime="20231115 11:16:26.190"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${erro}</arg>
+<arg>${message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:26.190" endtime="20231115 11:16:26.195"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:26.195" endtime="20231115 11:16:26.330"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:26.144" endtime="20231115 11:16:26.331"/>
 </kw>
 <tag>@Incorretos</tag>
-<status status="FAIL" starttime="20231110 15:35:48.022" endtime="20231110 15:35:56.962">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:22.594" endtime="20231115 11:16:26.331"/>
 </test>
 <test id="s1-t2" name="Cenário: Login - Informe usuário e senha!" line="12">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -40,32 +74,66 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:35:56.964" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:35:58.072" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:35:58.072" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:35:56.963" endtime="20231110 15:35:58.073"/>
+<msg timestamp="20231115 11:16:26.337" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:26.335" endtime="20231115 11:16:29.332"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:58.073" endtime="20231110 15:35:58.073"/>
+<status status="PASS" starttime="20231115 11:16:29.332" endtime="20231115 11:16:29.437"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:58.074" endtime="20231110 15:35:58.074"/>
+<msg timestamp="20231115 11:16:29.447" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:29.437" endtime="20231115 11:16:29.447"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:35:56.963" endtime="20231110 15:35:58.074"/>
+<status status="PASS" starttime="20231115 11:16:26.334" endtime="20231115 11:16:29.447"/>
 </kw>
 <kw name="Quando inserir o login &quot;&quot; e a senha &quot;&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:35:58.074" endtime="20231110 15:35:58.074"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:29.450" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:29.448" endtime="20231115 11:16:29.617"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:29.619" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:29.617" endtime="20231115 11:16:29.745"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:29.746" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:29.745" endtime="20231115 11:16:29.817"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:29.447" endtime="20231115 11:16:29.818"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe usuário e senha!&quot;" library="login_steps" sourcename="Então apresentará uma mensagem de &quot;${message}&quot;">
-<status status="NOT RUN" starttime="20231110 15:35:58.075" endtime="20231110 15:35:58.075"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${erro}</var>
+<arg>${mensagem}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:29.904" level="INFO">${erro} = Informe usuário e senha!</msg>
+<status status="PASS" starttime="20231115 11:16:29.818" endtime="20231115 11:16:29.904"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${erro}</arg>
+<arg>${message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:29.904" endtime="20231115 11:16:29.905"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:29.905" endtime="20231115 11:16:30.041"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:29.818" endtime="20231115 11:16:30.041"/>
 </kw>
 <tag>@EmBranco</tag>
-<status status="FAIL" starttime="20231110 15:35:56.962" endtime="20231110 15:35:58.075">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:26.333" endtime="20231115 11:16:30.042"/>
 </test>
 <test id="s1-t3" name="Cenário: Login - Informe o usuário!" line="18">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -73,32 +141,66 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:35:58.079" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:35:59.086" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:35:59.086" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:35:58.078" endtime="20231110 15:35:59.087"/>
+<msg timestamp="20231115 11:16:30.046" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:30.044" endtime="20231115 11:16:33.226"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:59.087" endtime="20231110 15:35:59.087"/>
+<status status="PASS" starttime="20231115 11:16:33.226" endtime="20231115 11:16:33.339"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:35:59.087" endtime="20231110 15:35:59.087"/>
+<msg timestamp="20231115 11:16:33.353" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:33.339" endtime="20231115 11:16:33.353"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:35:58.077" endtime="20231110 15:35:59.087"/>
+<status status="PASS" starttime="20231115 11:16:30.044" endtime="20231115 11:16:33.353"/>
 </kw>
 <kw name="Quando inserir o login &quot;&quot; e a senha &quot;admin&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:35:59.088" endtime="20231110 15:35:59.088"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:33.357" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:33.355" endtime="20231115 11:16:33.530"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:33.532" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:33.531" endtime="20231115 11:16:33.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:33.659" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:33.658" endtime="20231115 11:16:33.749"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:33.354" endtime="20231115 11:16:33.749"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe o usuário!&quot;" library="login_steps" sourcename="Então apresentará uma mensagem de &quot;${message}&quot;">
-<status status="NOT RUN" starttime="20231110 15:35:59.088" endtime="20231110 15:35:59.088"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${erro}</var>
+<arg>${mensagem}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:33.793" level="INFO">${erro} = Informe o usuário!</msg>
+<status status="PASS" starttime="20231115 11:16:33.750" endtime="20231115 11:16:33.793"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${erro}</arg>
+<arg>${message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:33.794" endtime="20231115 11:16:33.794"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:33.794" endtime="20231115 11:16:34.876"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:33.749" endtime="20231115 11:16:34.877"/>
 </kw>
 <tag>@SemUsuário</tag>
-<status status="FAIL" starttime="20231110 15:35:58.076" endtime="20231110 15:35:59.088">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:30.043" endtime="20231115 11:16:34.877"/>
 </test>
 <test id="s1-t4" name="Cenário: Login - Informe a senha!" line="24">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -106,32 +208,66 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:35:59.091" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:36:00.174" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:36:00.175" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:35:59.090" endtime="20231110 15:36:00.176"/>
+<msg timestamp="20231115 11:16:34.880" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:34.879" endtime="20231115 11:16:38.618"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:00.176" endtime="20231110 15:36:00.176"/>
+<status status="PASS" starttime="20231115 11:16:38.619" endtime="20231115 11:16:38.731"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:00.177" endtime="20231110 15:36:00.177"/>
+<msg timestamp="20231115 11:16:38.739" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:38.732" endtime="20231115 11:16:38.739"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:35:59.089" endtime="20231110 15:36:00.177"/>
+<status status="PASS" starttime="20231115 11:16:34.878" endtime="20231115 11:16:38.739"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:36:00.178" endtime="20231110 15:36:00.178"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:38.743" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:38.741" endtime="20231115 11:16:38.998"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:38.999" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:38.998" endtime="20231115 11:16:39.132"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:39.133" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:39.132" endtime="20231115 11:16:39.228"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:38.740" endtime="20231115 11:16:39.228"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe a senha!&quot;" library="login_steps" sourcename="Então apresentará uma mensagem de &quot;${message}&quot;">
-<status status="NOT RUN" starttime="20231110 15:36:00.178" endtime="20231110 15:36:00.179"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${erro}</var>
+<arg>${mensagem}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:39.271" level="INFO">${erro} = Informe a senha!</msg>
+<status status="PASS" starttime="20231115 11:16:39.229" endtime="20231115 11:16:39.272"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${erro}</arg>
+<arg>${message}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:39.272" endtime="20231115 11:16:39.272"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:39.272" endtime="20231115 11:16:39.457"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:39.229" endtime="20231115 11:16:39.457"/>
 </kw>
 <tag>@SemSenha</tag>
-<status status="FAIL" starttime="20231110 15:35:59.089" endtime="20231110 15:36:00.179">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:34.878" endtime="20231115 11:16:39.458"/>
 </test>
 <test id="s1-t5" name="Cenário: Login - Admin" line="30">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -139,32 +275,71 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:36:00.184" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:36:01.305" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:36:01.305" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:36:00.183" endtime="20231110 15:36:01.306"/>
+<msg timestamp="20231115 11:16:39.462" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:39.461" endtime="20231115 11:16:43.148"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:01.306" endtime="20231110 15:36:01.306"/>
+<status status="PASS" starttime="20231115 11:16:43.148" endtime="20231115 11:16:43.257"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:01.306" endtime="20231110 15:36:01.306"/>
+<msg timestamp="20231115 11:16:43.274" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:43.257" endtime="20231115 11:16:43.274"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:36:00.182" endtime="20231110 15:36:01.306"/>
+<status status="PASS" starttime="20231115 11:16:39.460" endtime="20231115 11:16:43.275"/>
 </kw>
 <kw name="Quando inserir o login &quot;admin&quot; e a senha &quot;admin&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:36:01.307" endtime="20231110 15:36:01.307"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:43.278" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:43.276" endtime="20231115 11:16:43.475"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:43.476" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:43.475" endtime="20231115 11:16:43.601"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:43.602" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:43.602" endtime="20231115 11:16:44.766"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:43.275" endtime="20231115 11:16:44.767"/>
 </kw>
 <kw name="Então apresentará a home do &quot;Administrador&quot;" library="home_steps" sourcename="Então apresentará a home do &quot;${logged}&quot;">
-<status status="NOT RUN" starttime="20231110 15:36:01.307" endtime="20231110 15:36:01.307"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${logado}</var>
+<arg>${home}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:44.811" level="INFO">${logado} = Administrador</msg>
+<status status="PASS" starttime="20231115 11:16:44.767" endtime="20231115 11:16:44.811"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${logado}</arg>
+<arg>${logged}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:44.811" endtime="20231115 11:16:44.811"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231115 11:16:45.029" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231115 11:16:44.812" endtime="20231115 11:16:45.029"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:45.030" endtime="20231115 11:16:45.207"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:44.767" endtime="20231115 11:16:45.207"/>
 </kw>
 <tag>@Admin</tag>
-<status status="FAIL" starttime="20231110 15:36:00.180" endtime="20231110 15:36:01.307">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:39.459" endtime="20231115 11:16:45.208"/>
 </test>
 <test id="s1-t6" name="Cenário: Login - User" line="36">
 <kw name="Dado que desejo acessar o sistema" library="login_steps">
@@ -172,49 +347,162 @@
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231110 15:36:01.317" level="INFO">Opening browser 'firefox' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
-<msg timestamp="20231110 15:36:02.414" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20231110 15:36:02.415" level="FAIL">InvalidArgumentException: Message: binary is not a Firefox executable
-</msg>
-<status status="FAIL" starttime="20231110 15:36:01.309" endtime="20231110 15:36:02.415"/>
+<msg timestamp="20231115 11:16:45.212" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:45.210" endtime="20231115 11:16:48.353"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:02.415" endtime="20231110 15:36:02.416"/>
+<status status="PASS" starttime="20231115 11:16:48.354" endtime="20231115 11:16:48.459"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="NOT RUN" starttime="20231110 15:36:02.416" endtime="20231110 15:36:02.416"/>
+<msg timestamp="20231115 11:16:48.467" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:48.459" endtime="20231115 11:16:48.468"/>
 </kw>
-<status status="FAIL" starttime="20231110 15:36:01.309" endtime="20231110 15:36:02.416"/>
+<status status="PASS" starttime="20231115 11:16:45.209" endtime="20231115 11:16:48.468"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;user&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
-<status status="NOT RUN" starttime="20231110 15:36:02.416" endtime="20231110 15:36:02.416"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:48.469" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:48.469" endtime="20231115 11:16:48.675"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:48.676" level="INFO">Typing text 'user' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:48.675" endtime="20231115 11:16:48.798"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:48.799" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:48.798" endtime="20231115 11:16:49.072"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:48.468" endtime="20231115 11:16:49.072"/>
 </kw>
 <kw name="Então apresentará a home do &quot;Usuário&quot;" library="home_steps" sourcename="Então apresentará a home do &quot;${logged}&quot;">
-<status status="NOT RUN" starttime="20231110 15:36:02.417" endtime="20231110 15:36:02.417"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${logado}</var>
+<arg>${home}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:49.115" level="INFO">${logado} = Usuário</msg>
+<status status="PASS" starttime="20231115 11:16:49.073" endtime="20231115 11:16:49.115"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${logado}</arg>
+<arg>${logged}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231115 11:16:49.115" endtime="20231115 11:16:49.116"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231115 11:16:49.335" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231115 11:16:49.116" endtime="20231115 11:16:49.336"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231115 11:16:49.336" endtime="20231115 11:16:49.469"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:49.073" endtime="20231115 11:16:49.469"/>
 </kw>
 <tag>@User</tag>
-<status status="FAIL" starttime="20231110 15:36:01.308" endtime="20231110 15:36:02.417">InvalidArgumentException: Message: binary is not a Firefox executable
-</status>
+<status status="PASS" starttime="20231115 11:16:45.208" endtime="20231115 11:16:49.470"/>
 </test>
-<status status="FAIL" starttime="20231110 15:35:47.800" endtime="20231110 15:36:02.419"/>
+<test id="s1-t7" name="Cenário: Login - User (Failed)" line="42">
+<kw name="Dado que desejo acessar o sistema" library="login_steps">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231115 11:16:49.474" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<status status="PASS" starttime="20231115 11:16:49.472" endtime="20231115 11:16:53.673"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231115 11:16:53.673" endtime="20231115 11:16:53.786"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231115 11:16:53.802" level="INFO">Page title is 'Login'.</msg>
+<status status="PASS" starttime="20231115 11:16:53.786" endtime="20231115 11:16:53.802"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:49.472" endtime="20231115 11:16:53.802"/>
+</kw>
+<kw name="Quando inserir o login &quot;user&quot; e a senha &quot;user&quot; e clicar em Entrar" library="login_steps" sourcename="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${usuario}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:53.804" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<status status="PASS" starttime="20231115 11:16:53.803" endtime="20231115 11:16:54.037"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${senha}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:54.039" level="INFO">Typing text 'user' into text field 'id = senha'.</msg>
+<status status="PASS" starttime="20231115 11:16:54.037" endtime="20231115 11:16:54.189"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${entrar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:54.190" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<status status="PASS" starttime="20231115 11:16:54.190" endtime="20231115 11:16:54.382"/>
+</kw>
+<status status="PASS" starttime="20231115 11:16:53.803" endtime="20231115 11:16:54.382"/>
+</kw>
+<kw name="Então apresentará a home do &quot;FALHA PROPOSITAL&quot;" library="home_steps" sourcename="Então apresentará a home do &quot;${logged}&quot;">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${logado}</var>
+<arg>${home}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231115 11:16:54.434" level="INFO">${logado} = Usuário</msg>
+<status status="PASS" starttime="20231115 11:16:54.384" endtime="20231115 11:16:54.434"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${logado}</arg>
+<arg>${logged}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231115 11:16:54.435" level="FAIL">Usuário != FALHA PROPOSITAL</msg>
+<status status="FAIL" starttime="20231115 11:16:54.434" endtime="20231115 11:16:54.435"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" starttime="20231115 11:16:54.435" endtime="20231115 11:16:54.435"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231115 11:16:54.435" endtime="20231115 11:16:54.435"/>
+</kw>
+<status status="FAIL" starttime="20231115 11:16:54.383" endtime="20231115 11:16:54.435"/>
+</kw>
+<tag>@Failed</tag>
+<status status="FAIL" starttime="20231115 11:16:49.471" endtime="20231115 11:16:54.435">Usuário != FALHA PROPOSITAL</status>
+</test>
+<meta name="Application">robot-web-test</meta>
+<status status="FAIL" starttime="20231115 11:16:22.373" endtime="20231115 11:16:54.437"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="6" skip="0">All Tests</stat>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">@Admin</stat>
-<stat pass="0" fail="1" skip="0">@EmBranco</stat>
-<stat pass="0" fail="1" skip="0">@Incorretos</stat>
-<stat pass="0" fail="1" skip="0">@SemSenha</stat>
-<stat pass="0" fail="1" skip="0">@SemUsuário</stat>
-<stat pass="0" fail="1" skip="0">@User</stat>
+<stat pass="1" fail="0" skip="0">@Admin</stat>
+<stat pass="1" fail="0" skip="0">@EmBranco</stat>
+<stat pass="0" fail="1" skip="0">@Failed</stat>
+<stat pass="1" fail="0" skip="0">@Incorretos</stat>
+<stat pass="1" fail="0" skip="0">@SemSenha</stat>
+<stat pass="1" fail="0" skip="0">@SemUsuário</stat>
+<stat pass="1" fail="0" skip="0">@User</stat>
 </tag>
 <suite>
-<stat pass="0" fail="6" skip="0" id="s1" name="Login Test">Login Test</stat>
+<stat pass="6" fail="1" skip="0" id="s1" name="Login Test">Login Test</stat>
 </suite>
 </statistics>
 <errors>
