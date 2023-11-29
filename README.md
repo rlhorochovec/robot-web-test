@@ -1,7 +1,7 @@
 # robot-web-test
 [![robot-web-test](https://github.com/rlhorochovec/robot-web-test/actions/workflows/ci.yml/badge.svg)](https://github.com/rlhorochovec/robot-web-test/actions/workflows/ci.yml)
 
-Projeto de automação de testes web utilizando Robot Framework, GitHubAcitons e Grafana.
+Projeto de automação de testes web utilizando Robot Framework, GitHub Actions e Grafana.
 
 ## Dependências
 - Python 3.10.12
