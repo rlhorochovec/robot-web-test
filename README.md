@@ -36,6 +36,7 @@ Para enviar os resultados para o Grafana, rode o seguinte comando
 ```bash
   python3 test_archiver/output_parser.py --dbengine postgres --database robot_results --host localhost --user postgres --pw admin --port 5432 --metadata Application:robot-web-test report/output.xml
 ```
+Para enviar para o Grafana execute somente o arquivo "test/login_test.robot", caso rode todos os testes o output_parser.py não conseguirá fazer a leitura do XML para enviar os dados para o banco de dados.
 
 ## Relatório dos testes
 Acessando o Grafana
