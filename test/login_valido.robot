@@ -6,4 +6,3 @@ Test Template     Login válido
 
 *** Test Cases ***      login       password   logged
 Login válido - Admin    admin       admin      Administrador
-Login válido - User     user        user       Usuário
