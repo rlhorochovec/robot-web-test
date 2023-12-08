@@ -22,6 +22,7 @@ jobs:
           -v ${{github.workspace}}/test:/opt/robotframework/tests:Z \
           -v ${{github.workspace}}/report:/opt/robotframework/reports:Z \
           -v ${{github.workspace}}/steps:/opt/robotframework/steps:Z \
+          -v ${{github.workspace}}/template:/opt/robotframework/template:Z \
           --user 1001:1000 \
           ppodgorsek/robot-framework:latest
   
