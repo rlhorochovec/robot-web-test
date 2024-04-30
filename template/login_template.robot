@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-*** Variable ***
+*** Variables ***
 ${browser}      chrome
 ${url}          https://rlhorochovec.github.io/qa/index.html
 ${usuario}      id = login 
