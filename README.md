@@ -38,7 +38,7 @@ Para enviar os resultados para o Grafana, rode o seguinte comando
 ```
 Para enviar para o Grafana execute somente o arquivo "test/login_test.robot", caso rode todos os testes o output_parser.py não conseguirá fazer a leitura do XML para enviar os dados para o banco de dados.
 
-## Relatório dos testes
+## Relatório dos testes no Grafana
 Acessando o Grafana
 ```bash
 http://localhost:3000/
@@ -46,7 +46,7 @@ Login: admin
 Senha: admin
 ```
 
-## Relatório dos testes
+## Relatório dos testes do robot
 ./report/report.html
 
 ## Demonstração
