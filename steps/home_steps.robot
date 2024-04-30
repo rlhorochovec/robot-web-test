@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-*** Variable ***
+*** Variables ***
 ${home}       id = h2
 
 *** Keywords ***
