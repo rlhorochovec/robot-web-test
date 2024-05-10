@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-10T12:30:35.585570" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="D:\dev\code-workspace\robot-web-test\test\login_test.robot">
+<test id="s1-t1" name="Cenário: Login - Usuário e/ou senha incorretos!" line="6">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:30:36.232950" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:30:40.090691" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:30:44.260325" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:30:44.260325" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:30:36.231951" elapsed="8.168963">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:44.400914" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:44.400914" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:30:36.229952" elapsed="8.170962">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;user&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:30:44.416535" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará uma mensagem de &quot;Usuário e/ou senha incorretos!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:30:44.416535" elapsed="0.000000"/>
+</kw>
+<tag>@Incorretos</tag>
+<status status="FAIL" start="2024-05-10T12:30:36.227954" elapsed="8.188581">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<test id="s1-t2" name="Cenário: Login - Informe usuário e senha!" line="12">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:30:44.427220" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:30:45.249949" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:30:49.174935" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:30:49.174935" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:30:44.426220" elapsed="4.748715">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:49.174935" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:49.174935" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:30:44.426220" elapsed="4.748715">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;&quot; e a senha &quot;&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:30:49.174935" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará uma mensagem de &quot;Informe usuário e senha!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:30:49.174935" elapsed="0.000000"/>
+</kw>
+<tag>@EmBranco</tag>
+<status status="FAIL" start="2024-05-10T12:30:44.425223" elapsed="4.765314">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<test id="s1-t3" name="Cenário: Login - Informe o usuário!" line="18">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:30:49.216538" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:30:49.988936" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:30:53.814445" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:30:53.814445" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:30:49.216538" elapsed="4.597907">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:53.814445" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:30:53.814445" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:30:49.215539" elapsed="4.598906">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:30:53.814445" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará uma mensagem de &quot;Informe o usuário!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:30:53.814445" elapsed="0.000000"/>
+</kw>
+<tag>@SemUsuário</tag>
+<status status="FAIL" start="2024-05-10T12:30:49.214542" elapsed="4.599903">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<test id="s1-t4" name="Cenário: Login - Informe a senha!" line="24">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:31:01.945727" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:31:02.744393" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:06.643753" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:31:06.643753" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:31:01.945727" elapsed="4.698026">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:06.643753" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:06.643753" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:30:53.829047" elapsed="12.814706">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;user&quot; e a senha &quot;&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:31:06.643753" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará uma mensagem de &quot;Informe a senha!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:31:06.643753" elapsed="0.000000"/>
+</kw>
+<tag>@SemSenha</tag>
+<status status="FAIL" start="2024-05-10T12:30:53.828048" elapsed="12.831298">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<test id="s1-t5" name="Cenário: Login - Admin" line="30">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:31:06.680559" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:31:07.442554" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:11.253178" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:31:11.253178" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:31:06.680559" elapsed="4.572619">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:11.253178" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:11.253178" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:31:06.679561" elapsed="4.573617">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;admin&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:31:11.253178" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará a home do &quot;Administrador&quot;" owner="home_steps" source_name="Então apresentará a home do &quot;${logged}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:31:11.253178" elapsed="0.000000"/>
+</kw>
+<tag>@Admin</tag>
+<status status="FAIL" start="2024-05-10T12:31:06.678559" elapsed="4.590212">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<test id="s1-t6" name="Cenário: Login - User" line="36">
+<kw name="Dado que desejo acessar o sistema" owner="login_steps">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-10T12:31:11.297103" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2024-05-10T12:31:12.053011" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:15.855222" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2024-05-10T12:31:15.855222" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2024-05-10T12:31:11.296104" elapsed="4.559118">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:15.855222" elapsed="0.000000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="NOT RUN" start="2024-05-10T12:31:15.855222" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-10T12:31:11.295102" elapsed="4.560120">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</kw>
+<kw name="Quando inserir o login &quot;user&quot; e a senha &quot;user&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
+<status status="NOT RUN" start="2024-05-10T12:31:15.855222" elapsed="0.000000"/>
+</kw>
+<kw name="Então apresentará a home do &quot;Usuário&quot;" owner="home_steps" source_name="Então apresentará a home do &quot;${logged}&quot;">
+<status status="NOT RUN" start="2024-05-10T12:31:15.855222" elapsed="0.000000"/>
+</kw>
+<tag>@User</tag>
+<status status="FAIL" start="2024-05-10T12:31:11.293768" elapsed="8.617699">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 121
+Current browser version is 124.0.6367.119 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7658B7012+3522402]
+	(No symbol) [0x00007FF7654D8352]
+	(No symbol) [0x00007FF765385ABB]
+	(No symbol) [0x00007FF7653BC4D2]
+	(No symbol) [0x00007FF7653BB832]
+	(No symbol) [0x00007FF7653B50C6]
+	(No symbol) [0x00007FF7653B2188]
+	(No symbol) [0x00007FF7653F9469]
+	(No symbol) [0x00007FF7653EEE03]
+	(No symbol) [0x00007FF7653BF4D4]
+	(No symbol) [0x00007FF7653C05F1]
+	GetHandleVerifier [0x00007FF7658E9B9D+3730157]
+	GetHandleVerifier [0x00007FF76593F02D+4079485]
+	GetHandleVerifier [0x00007FF7659375D3+4048163]
+	GetHandleVerifier [0x00007FF76560A649+718233]
+	(No symbol) [0x00007FF7654E4A3F]
+	(No symbol) [0x00007FF7654DFA94]
+	(No symbol) [0x00007FF7654DFBC2]
+	(No symbol) [0x00007FF7654CF2E4]
+	BaseThreadInitThunk [0x00007FF897457344+20]
+	RtlUserThreadStart [0x00007FF898E226B1+33]
+</status>
+</test>
+<meta name="Application">robot-web-test</meta>
+<status status="FAIL" start="2024-05-10T12:30:35.601192" elapsed="44.335128"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="6" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">@Admin</stat>
+<stat pass="0" fail="1" skip="0">@EmBranco</stat>
+<stat pass="0" fail="1" skip="0">@Incorretos</stat>
+<stat pass="0" fail="1" skip="0">@SemSenha</stat>
+<stat pass="0" fail="1" skip="0">@SemUsuário</stat>
+<stat pass="0" fail="1" skip="0">@User</stat>
+</tag>
+<suite>
+<stat pass="0" fail="6" skip="0" id="s1" name="Login Test">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-10T12:30:40.090691" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:30:45.249949" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:30:49.988936" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:02.744393" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:07.442554" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2024-05-10T12:31:12.053011" level="WARN">The chromedriver version (121.0.6167.184) detected in PATH at D:\dev\driver\chromedriver.exe might not be compatible with the detected chrome version (124.0.6367.119); currently, chromedriver 124.0.6367.201 is recommended for chrome 124.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
