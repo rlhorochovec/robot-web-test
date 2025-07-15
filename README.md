@@ -45,6 +45,11 @@ http://localhost:3000/
 Login: admin
 Senha: admin
 ```
+## Relatório dos testes
+Gerar o Allure Report
+```bash
+  report/report.html
+```
 
 Visualizar relatório dos testes do robot publicados
 [Visualizar](https://rlhorochovec.github.io/robot-web-test/report.html)
