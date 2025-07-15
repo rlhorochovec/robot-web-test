@@ -9,10 +9,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Create folder for report
-        run: mkdir report
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
