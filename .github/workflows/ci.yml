@@ -2,7 +2,7 @@ name: robot-web-test
 
 on:
   push:
-    branches: [ develop, main ]
+    branches: [ "develop", "main" ]
 
 jobs:
   build:
@@ -24,10 +24,9 @@ jobs:
           -v ${{github.workspace}}/steps:/opt/robotframework/steps:Z \
           -v ${{github.workspace}}/template:/opt/robotframework/template:Z \
           --user 1001:1000 \
-          ppodgorsek/robot-framework:latest
-  
+      
       - name: Publish test results
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: reports
