@@ -29,10 +29,10 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          if ! robot --outputdir report --exclude skip tests/; then
+          if ! robot --outputdir report --exclude skip test/; then
               echo "Robot Framework tests failed. Rerunning failed tests..."
               if [ -f report/output.xml ]; then
-                  robot --rerunfailed report/output.xml --outputdir report_rerun tests/ || true
+                  robot --rerunfailed report/output.xml --outputdir report_rerun test/ || true
                   if [ -f report_rerun/output.xml ]; then
                       rebot --output report/output.xml --log report/log.html --report report/report.html --merge report/output.xml report_rerun/output.xml
                   else
