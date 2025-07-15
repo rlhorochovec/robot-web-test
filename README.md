@@ -46,8 +46,8 @@ Login: admin
 Senha: admin
 ```
 
-## Relatório dos testes do robot
-./report/report.html
+Visualizar relatório dos testes do robot publicados
+[Visualizar](https://rlhorochovec.github.io/robot-web-test/report.html)
 
 ## Demonstração
 [Assistir vídeo da execução](https://youtu.be/Okg_H1dS9pU)<br />
