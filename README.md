@@ -59,8 +59,8 @@ Visualizar relatório dos testes do robot publicados
 [Assistir vídeo da execução e dados no Grafana](https://youtu.be/MwuQRMd4wBk)
 
 ## Screenshots
-<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/grafana_dark.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/grafana_light.png" width="400" /><br />
-<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/report.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/Screenshots/log.png" width="400" />
+<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/screenshots/grafana_dark.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/screenshots/grafana_light.png" width="400" /><br />
+<img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/screenshots/report.png" width="400" /> <img src="https://github.com/rlhorochovec/robot-web-test/blob/develop/screenshots/log.png" width="400" />
 
 ## Referência
 

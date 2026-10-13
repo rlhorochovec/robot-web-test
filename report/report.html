@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 7.0 (Python 3.12.2 on win32)" name="Generator">
+<meta content="Robot Framework 7.5 (Python 3.12.3 on linux)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
 <style media="all">
 :root {
@@ -116,15 +116,16 @@ select {
 #header {
     width: 65em;
     height: 3em;
-    margin: 20px 0 6px 0;
+    margin: 1em 0 0 0;
 }
 h1 {
     float: left;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 1em 0;
     width: 75%;
 }
 h2 {
     clear: left;
+    margin: 1.5em 0 0.5em 0;
 }
 #generated {
     float: right;
@@ -168,7 +169,13 @@ h2 {
     background-color: var(--primary-color);
     border-radius: 3px;
 }
-.label.debug, .label.trace, .label.error, .label.keyword {
+/* https://stackoverflow.com/questions/75238633 */
+@supports (-moz-appearance: none) {
+    .label {
+        padding-top: 4px;
+    }
+}
+.label.debug, .label.trace, .label.error {
     letter-spacing: 0;
 }
 .label.pass, .label.fail, .label.error, .label.skip, .label.warn {
@@ -355,19 +362,6 @@ th.stats-col-graph:hover {
 [data-theme="light"] .dark-mode-icon {
     display: block;
 }
-@keyframes highlight {
-    0% {
-        background: var(--primary-color)
-    }
-    100% {
-        background: var(--target-color);
-    }
-}
-:target {
-    background: var(--target-color);
-    transition: background 0.3s;
-    animation: highlight 4s;
-}
 </style>
 <style media="all">
 :root {
@@ -552,6 +546,28 @@ input[type='submit']:hover, input[type='button']:hover {
 #test-details th, #test-details td {
     padding: 0.2em;
 }
+#test-details .metadata {
+    table-layout: auto;
+    width: 100%;
+    border-spacing: 0;
+}
+#test-details .metadata th, #test-details .metadata td {
+    padding: 0 0 0.2em 0;
+    vertical-align: top;
+    text-align: left;
+    background: transparent;
+}
+#test-details .metadata th {
+    width: 1%;
+    padding-right: 0.6em;
+    font-weight: bold;
+}
+#test-details .metadata td {
+    overflow-wrap: anywhere;
+}
+#test-details .details-col-metadata .details-limited {
+    overflow-x: hidden;
+}
 .details-limited {
     max-height: 20em;
     overflow: auto;
@@ -576,8 +592,21 @@ input[type='submit']:hover, input[type='button']:hover {
 .details-col-doc {
     min-width: 10em;
 }
+.details-col-metadata {
+    min-width: 10em;
+}
 .details-col-tags {
     min-width: 10em;
+}
+.details-col-tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.details-col-tags .label {
+    margin: 0 0.3em 0.3em 0;
+    font-size: 1em;
+    letter-spacing: normal;
 }
 .details-col-crit {
     width: 3.5em;
@@ -933,6 +962,7 @@ window.model = (function () {
         test.fullName = data.parent.fullName + '.' + test.name;
         test.formatParentName = function () { return util.formatParentName(test); };
         test.timeout = data.timeout;
+        test.metadata = data.metadata;
         test.populateKeywords = createIterablePopulator('Keyword');
         test.childrenNames = ['keyword'];
         test.isChildrenLoaded = data.isChildrenLoaded;
@@ -957,7 +987,7 @@ window.model = (function () {
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =  ' : '');
+        kw.assign = data.assign;
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1068,58 +1098,48 @@ window.stats = (function () {
             });
     }
     function calculatePercents(total, passed, failed, skipped) {
-        if (total == 0) {
+        if (total == 0)
             return [0.0, 0.0, 0.0];
-        }
         var pass = 100.0 * passed / total;
         var skip = 100.0 * skipped / total;
         var fail = 100.0 * failed / total;
         if (pass > 0 && pass < 0.1)
-            pass = 0.1
+            pass = 0.1;
         if (fail > 0 && fail < 0.1)
-            fail = 0.1
+            fail = 0.1;
         if (skip > 0 && skip < 0.1)
-            skip = 0.1
+            skip = 0.1;
         if (pass > 99.95 && pass < 100)
-            pass = 99.9
+            pass = 99.9;
         if (fail > 99.95 && fail < 100)
-            fail = 99.9
+            fail = 99.9;
         if (skip > 99.95 && skip < 100)
-            skip = 99.9
-        return [Math.round(pass*10)/10, Math.round(skip*10)/10, Math.round(fail*10)/10];
+            skip = 99.9;
+        return [round1(pass), round1(skip), round1(fail)];
     }
     function calculateWidths(num1, num2, num3) {
         if (num1 + num2 + num3 === 0)
             return [0.0, 0.0, 0.0];
         // Make small percentages better visible
         if (num1 > 0 && num1 < 1)
-            num1 = 1
+            num1 = 1.0;
         if (num2 > 0 && num2 < 1)
-            num2 = 1
+            num2 = 1.0;
         if (num3 > 0 && num3 < 1)
-            num3 = 1
+            num3 = 1.0;
         // Handle situation where some are rounded up
         while (num1 + num2 + num3 > 100) {
-            if (num1 > num2 && num1 > num3)
-                num1 -= 0.1;
-            else if (num2 > num1 && num2 > num3)
-                num2 -= 0.1;
-            else if (num3 > num1 && num3 > num2)
-                num3 -= 0.1;
-            else if (num1 > num3 && num1 == num2) {
-                num1 -= 0.1;
-                num2 -= 0.1;
-            }
-            else if (num1 > num2 && num1 == num3) {
-                num1 -= 0.1;
-                num3 -= 0.1;
-            }
-            else if (num2 > num1 && num2 == num3) {
-                num2 -= 0.1;
-                num3 -= 0.1;
-            }
+            if (num1 >= num2 && num1 >= num3)
+                num1 = round1(num1 - 0.1);
+            else if (num2 >= num1 && num2 >= num3)
+                num2 = round1(num2 - 0.1);
+            else
+                num3 = round1(num3 - 0.1);
         }
-        return [Math.ceil(num1*10)/10, Math.ceil(num2*10)/10, Math.ceil(num3*10)/10];
+        return [num1, num2, num3];
+    }
+    function round1(num) {
+        return Math.round(num*10) / 10;
     }
     return {
         Statistics: Statistics
@@ -1338,7 +1358,7 @@ window.testdata = function () {
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
     var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
                          'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
-                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
+                         'WHILE', 'GROUP', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1391,7 +1411,7 @@ window.testdata = function () {
             timeout: strings.get(element[3]),
             args: strings.get(element[5]),
             assign: strings.get(element[6]),
-            tags: strings.get(element[7]),
+            tags: tags(element[7], strings),
             doc: function () {
                 var doc = strings.get(element[4]);
                 this.doc = function () { return doc; };
@@ -1426,7 +1446,7 @@ window.testdata = function () {
         return util.map(taglist, strings.get);
     }
     function createTest(parent, element, strings, index) {
-        var status = element[4];
+        var status = element[5];
         var test = model.Test({
             parent: parent,
             id: 't' + (index + 1),
@@ -1437,6 +1457,7 @@ window.testdata = function () {
                 return doc;
             },
             timeout: strings.get(element[1]),
+            metadata: parseMetadata(element[4], strings),
             status: parseStatus(status),
             message: function () {
                 var msg = status.length == 4 ? strings.get(status[3]) : '';
@@ -1445,9 +1466,9 @@ window.testdata = function () {
             },
             times: model.Times(times(status)),
             tags: tags(element[3], strings),
-            isChildrenLoaded: typeof(element[5]) !== 'number'
+            isChildrenLoaded: typeof(element[6]) !== 'number'
         });
-        lazyPopulateKeywordsFromFile(test, element[5], strings);
+        lazyPopulateKeywordsFromFile(test, element[6], strings);
         return test;
     }
     function createSuite(parent, element, strings, index) {
@@ -1706,7 +1727,7 @@ function addStatistics() {
         '<th class="stats-col-elapsed">Elapsed</th>' +
         '<th class="stats-col-graph">Pass / Fail / Skip</th>';
     var statTable =
-        '<h2>{Test} Statistics</h2>' +
+        '<h2>Statistics</h2>' +
         '<table class="statistics" id="total-stats"><thead><tr>' +
         '<th class="stats-col-name">Total Statistics</th>' + statHeaders +
         '</tr></thead></table>' +
@@ -1716,7 +1737,7 @@ function addStatistics() {
         '<table class="statistics" id="suite-stats"><thead><tr>' +
         '<th class="stats-col-name">Statistics by Suite</th>' + statHeaders +
         '</tr></thead></table>';
-    $(testOrTask(statTable)).appendTo('#statistics-container');
+    $(statTable).appendTo('#statistics-container');
     util.map(['total', 'tag', 'suite'], addStatTable);
     addTooltipsToElapsedTimes();
     enableStatisticsSorter();
@@ -1897,22 +1918,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[4,5],[0,0,44335],[],[[6,0,0,[7],[0,627,8189,8],[]],[9,0,0,[10],[0,8824,4765,8],[]],[11,0,0,[12],[0,13614,4600,8],[]],[13,0,0,[14],[0,18227,12831,8],[]],[15,0,0,[16],[0,31078,4590,8],[]],[17,0,0,[18],[0,35693,8618,8],[]]],[],[6,0,6,0]];
+window.output["suite"] = [1,2,3,0,[4,5],[0,0,24610],[],[[6,0,0,[7],[],[1,666,6202],[]],[8,0,0,[9],[],[1,6869,3591],[]],[10,0,0,[11],[],[1,10461,3307],[]],[12,0,0,[13],[],[1,13768,3102],[]],[14,0,0,[15],[],[0,16871,3768,16],[]],[17,0,0,[18],[],[0,20641,3964,16],[]]],[],[6,4,2,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Login Test","*D:\\dev\\code-workspace\\robot-web-test\\test\\login_test.robot","*../test/login_test.robot","*Application","*<p>robot-web-test\x3c/p>","*Cenário: Login - Usuário e/ou senha incorretos!","*@Incorretos","eNqN0ztv2zAQAOA5/hUcUwgw+JJIahP1SDs0KBq3S5WBlhlLiCwKJN3Y/750nBbNQkUTcffpDnzcg3ZuMNO98aXVyutdfer07EMoB19DTu11DtwVgcl40F1ZDjb94MBvbV8z5gmUvTUHXdkhxICZxjNwx3k21ru31D+MMFqVR2v15MHWmhcXfvibCzURpmu4zkjG1ggJ8DL4HmyHSdkzmFVYl3n7zZq9VQfQDKN27Z0x+1G31y5tMc/j0KnLFtruNbTWJ7168Kp79lZ1Ol/d3Gn/WU27Uf/UdngaQv9f8ATDx5qGZSmXDCKckBRjCvHj6ub23gB3PmzN+Om9pBUPKiYITwspo0KWtIrXkJKTBZHCMosLjDiPikbQTERFXdeQxLs0tKJRUcK0QY/Ld1ALKaqEMAJRypa9IA3EVUIhE5SnH/EsrUjwlKOMLPsMFhkVCUMck+gR0JoWpIk/mqYQdEHIMv7wygbXlxpSOb3pw1DuvkyD3/TH6fk/yQWjKSOUJhgG/N2PP8K0XX2YCOvfWV5jnEmUXDb4B/YmMHk=","*Cenário: Login - Informe usuário e senha!","*@EmBranco","*Cenário: Login - Informe o usuário!","*@SemUsuário","*Cenário: Login - Informe a senha!","*@SemSenha","*Cenário: Login - Admin","*@Admin","*Cenário: Login - User","*@User"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Login Test","*/home/xovec/dev/code-workspace/robot-web-test/test/login_test.robot","*../test/login_test.robot","*Application","*<p>robot-web-test\x3c/p>","*Cenário: Login - Usuário e/ou senha incorretos!","*@Incorretos","*Cenário: Login - Informe usuário e senha!","*@EmBranco","*Cenário: Login - Informe o usuário!","*@SemUsuário","*Cenário: Login - Informe a senha!","*@SemSenha","*Cenário: Login - Admin","*@Admin","*Element with locator 'id = h2' not found.","*Cenário: Login - User","*@User"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:44","fail":6,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:00:05","fail":1,"label":"@Admin","pass":0,"skip":0},{"elapsed":"00:00:05","fail":1,"label":"@EmBranco","pass":0,"skip":0},{"elapsed":"00:00:08","fail":1,"label":"@Incorretos","pass":0,"skip":0},{"elapsed":"00:00:13","fail":1,"label":"@SemSenha","pass":0,"skip":0},{"elapsed":"00:00:05","fail":1,"label":"@SemUsuário","pass":0,"skip":0},{"elapsed":"00:00:09","fail":1,"label":"@User","pass":0,"skip":0}],[{"elapsed":"00:00:44","fail":6,"id":"s1","label":"Login Test","name":"Login Test","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:24","fail":2,"label":"All Tests","pass":4,"skip":0}],[{"elapsed":"00:00:04","fail":1,"label":"@Admin","pass":0,"skip":0},{"elapsed":"00:00:04","fail":0,"label":"@EmBranco","pass":1,"skip":0},{"elapsed":"00:00:06","fail":0,"label":"@Incorretos","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"label":"@SemSenha","pass":1,"skip":0},{"elapsed":"00:00:03","fail":0,"label":"@SemUsuário","pass":1,"skip":0},{"elapsed":"00:00:04","fail":1,"label":"@User","pass":0,"skip":0}],[{"elapsed":"00:00:25","fail":2,"id":"s1","label":"Login Test","name":"Login Test","pass":4,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1715355035601;
+window.output["baseMillis"] = 1791904054585;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 44383;
+window.output["generated"] = 24667;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -2257,12 +2278,12 @@ function renderTestDetailsRows(tests, target) {
 }
 
 function configureTableSorter(sortByStatus) {
-    var config = {headers: {3: {sorter: 'status'},
-                            5: {sortInitialOrder: 'desc'},
-                            6: {sorter: 'times'}},
+    var config = {headers: {4: {sorter: 'status'},
+                            6: {sortInitialOrder: 'desc'},
+                            7: {sorter: 'times'}},
                   selectorSort: '.details-col-header'};
     if (sortByStatus)
-        config['sortList'] = [[3, 0]];
+        config['sortList'] = [[4, 0]];
     $('#test-details').tablesorter(config);
 }
 
@@ -2277,25 +2298,31 @@ function toggleDetailsColumn(name) {
     var column = $('.details-col-' + name);
     column.toggleClass('hidden');
     var hidden = column.hasClass('hidden');
+    if (name === 'tags') {
+      column.find('.tags').toggle();
+    }
     storage.set(name, hidden ? 'hidden' : 'visible');
     column.find('.details-col-toggle').html(hidden ? '&hellip;' : '&times;');
 }
 
 function hideHiddenDetailsColumns(elem) {
-    var names = ['doc', 'tags', 'msg', 'elapsed', 'times'];
+    var names = ['doc', 'metadata', 'tags', 'msg', 'elapsed', 'times'];
     for (var i = 0; i < names.length; i++) {
         var name = names[i];
-        if (storage.get(name, 'visible') == 'hidden') {
+        if (storage.get(name, 'visible') === 'hidden') {
             var column = elem.find('.details-col-' + name);
             column.addClass('hidden');
             column.find('.details-col-toggle').html('&hellip;');
+            if (name === 'tags') {
+                column.find('.tags').hide();
+            }
         }
     }
 }
 </script>
 
 <script type="text/x-jquery-tmpl" id="summaryTableTemplate">
-  <h2>Summary Information</h2>
+  <h2>Summary</h2>
   <table class="details">
     <tr>
       <th>Status:</th>
@@ -2364,7 +2391,7 @@ function hideHiddenDetailsColumns(elem) {
 
 <script type="text/x-jquery-tmpl" id="tagStatisticsRowTemplate">
   <tr onclick="tagDetailSelected('${label}')" class="row-${$item.index}">
-    <td class="stats-col-name" title="{{html doc}}">
+    <td class="stats-col-name" title="${doc}">
       <div class="stat-name">
         <a href="#tags?${label}">{{html label}}</a>
         {{if info}}(${info}){{/if}}
@@ -2392,7 +2419,7 @@ function hideHiddenDetailsColumns(elem) {
 </script>
 
 <script type="text/x-jquery-tmpl" id="detailsHeaderTemplate">
-  <h2 id="${linkTarget}">{{= testOrTask('{Test} Details')}}</h2>
+  <h2 id="${linkTarget}">Details</h2>
   <ul id="detail-tabs">
     <li class="${totalTabStatus} detail-tab">
       <a href="#totals" onclick="renderTotalSelector()"
@@ -2695,6 +2722,10 @@ function hideHiddenDetailsColumns(elem) {
           <div class='details-col-toggle' onclick="toggleDetailsColumn('doc')">&times;</div>
           <div class='details-col-header'>Documentation</div>
         </th>
+        <th class="details-col-metadata" title="Metadata">
+          <div class='details-col-toggle' onclick="toggleDetailsColumn('metadata')">&times;</div>
+          <div class='details-col-header'>Metadata</div>
+        </th>
         <th class="details-col-tags" title="Tags">
           <div class='details-col-toggle' onclick="toggleDetailsColumn('tags')">&times;</div>
           <div class='details-col-header'>Tags</div>
@@ -2733,7 +2764,8 @@ function hideHiddenDetailsColumns(elem) {
     </td>
   {{/if}}
     <td class="details-col-doc"><div class="doc details-limited">{{html doc()}}</div></td>
-    <td class="details-col-tags"><div>{{html tags.join(', ')}}</div></td>
+    <td class="details-col-metadata"><div class="details-limited">{{if metadata.length}}<table class="metadata">{{each metadata}}<tr><th>{{html $value[0]}}:</th><td class="doc">{{html $value[1]}}</td></tr>{{/each}}</table>{{/if}}</div></td>
+    <td class="details-col-tags"><div class="tags">{{each tags}}<span class="label">{{html $value}}</span>{{/each}}</div></td>
     <td class="details-col-status"><div><span class="label ${status.toLowerCase()}">${status}</span></div></td>
     <td class="details-col-msg"><div class="message details-limited">{{html message()}}</div></td>
     <td class="details-col-elapsed"><div>${times.elapsedTime}</div></td>
