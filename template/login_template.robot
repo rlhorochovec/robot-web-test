@@ -8,7 +8,7 @@ ${usuario}      id = login
 ${senha}        id = senha
 ${entrar}       xpath = //*[text()="Entrar"]
 ${mensagem}     id = erro
-${home}         id = h2
+${home}         xpath = /html/body/header[2]/div/div/div/h1
 
 *** Keywords ***
 Login inválido
