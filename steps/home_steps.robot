@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${home}       id = h2
+${home}       xpath = /html/body/header[2]/div/div/div/h1
 
 *** Keywords ***
 Então apresentará a home do "${logged}"
