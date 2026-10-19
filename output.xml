@@ -1,697 +1,697 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5 (Python 3.10.11 on darwin)" generated="2026-10-19T12:18:59.781467" rpa="false" schemaversion="5">
+<robot generator="Robot 7.5 (Python 3.10.11 on darwin)" generated="2026-10-19T12:20:39.711991" rpa="false" schemaversion="5">
 <suite id="s1" name="Test" source="/Users/runner/work/robot-web-test/robot-web-test/test">
 <suite id="s1-s1" name="Login Invalido" source="/Users/runner/work/robot-web-test/robot-web-test/test/login_invalido.robot">
 <kw name="Abrir navegador" owner="login_template" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:18:59.936990" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:20:39.914064" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:18:59.936803" elapsed="8.451070"/>
+<status status="PASS" start="2026-10-19T12:20:39.913852" elapsed="12.999846"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:08.409401" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:20:53.222780" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:08.388958" elapsed="0.020552"/>
+<status status="PASS" start="2026-10-19T12:20:52.919213" elapsed="0.303700"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:08.409671" elapsed="0.651036"/>
+<status status="PASS" start="2026-10-19T12:20:53.223164" elapsed="0.890430"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:18:59.936192" elapsed="9.124661"/>
+<status status="PASS" start="2026-10-19T12:20:39.912916" elapsed="14.201316"/>
 </kw>
 <test id="s1-s1-t1" name="Login inválido - Usuário e/ou senha incorretos!" line="8">
 <kw name="Login inválido" owner="login_template">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:09.062632" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:20:54.119623" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:09.061849" elapsed="0.278808"/>
+<status status="PASS" start="2026-10-19T12:20:54.118255" elapsed="1.384236"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:09.342341" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:20:55.502995" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:09.341089" elapsed="0.681185"/>
+<status status="PASS" start="2026-10-19T12:20:55.502683" elapsed="0.137740"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.023561" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:20:55.642543" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.022638" elapsed="0.112946"/>
+<status status="PASS" start="2026-10-19T12:20:55.641599" elapsed="0.727212"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.151280" level="INFO">${erro} = Usuário e/ou senha incorretos!</msg>
+<msg time="2026-10-19T12:20:56.394306" level="INFO">${erro} = Usuário e/ou senha incorretos!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.135760" elapsed="0.015566"/>
+<status status="PASS" start="2026-10-19T12:20:56.369028" elapsed="0.025484"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.151493" elapsed="0.000453"/>
+<status status="PASS" start="2026-10-19T12:20:56.396280" elapsed="0.007386"/>
 </kw>
 <arg>user</arg>
 <arg>admin</arg>
 <arg>Usuário e/ou senha incorretos!</arg>
-<status status="PASS" start="2026-10-19T12:19:09.061608" elapsed="1.090400"/>
+<status status="PASS" start="2026-10-19T12:20:54.117676" elapsed="2.286121"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:09.060993" elapsed="1.091103"/>
+<status status="PASS" start="2026-10-19T12:20:54.116249" elapsed="2.288792"/>
 </test>
 <test id="s1-s1-t2" name="Login inválido - Informe usuário e senha!" line="9">
 <kw name="Login inválido" owner="login_template">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.155580" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:20:56.411167" level="INFO">Typing text '' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.154602" elapsed="0.046427"/>
+<status status="PASS" start="2026-10-19T12:20:56.410374" elapsed="0.096017"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.201429" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:20:56.506896" level="INFO">Typing text '' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.201210" elapsed="0.037511"/>
+<status status="PASS" start="2026-10-19T12:20:56.506635" elapsed="0.166217"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.239113" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:20:56.673962" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.238916" elapsed="0.036036"/>
+<status status="PASS" start="2026-10-19T12:20:56.673334" elapsed="0.057816"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.282450" level="INFO">${erro} = Informe usuário e senha!</msg>
+<msg time="2026-10-19T12:20:56.744621" level="INFO">${erro} = Informe usuário e senha!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.275104" elapsed="0.007394"/>
+<status status="PASS" start="2026-10-19T12:20:56.731612" elapsed="0.013059"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.282668" elapsed="0.000329"/>
+<status status="PASS" start="2026-10-19T12:20:56.744875" elapsed="0.000344"/>
 </kw>
 <arg>${EMPTY}</arg>
 <arg>${EMPTY}</arg>
 <arg>Informe usuário e senha!</arg>
-<status status="PASS" start="2026-10-19T12:19:10.153350" elapsed="0.129718"/>
+<status status="PASS" start="2026-10-19T12:20:56.409324" elapsed="0.335969"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:10.152303" elapsed="0.130862"/>
+<status status="PASS" start="2026-10-19T12:20:56.408080" elapsed="0.337322"/>
 </test>
 <test id="s1-s1-t3" name="Login inválido - Informe o usuário!" line="10">
 <kw name="Login inválido" owner="login_template">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.284203" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:20:56.746624" level="INFO">Typing text '' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.283849" elapsed="0.037149"/>
+<status status="PASS" start="2026-10-19T12:20:56.746370" elapsed="0.050755"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.321391" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:20:56.798616" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.321185" elapsed="0.047338"/>
+<status status="PASS" start="2026-10-19T12:20:56.797778" elapsed="0.073765"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.368907" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:20:56.872019" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.368717" elapsed="0.033015"/>
+<status status="PASS" start="2026-10-19T12:20:56.871771" elapsed="0.047714"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.411612" level="INFO">${erro} = Informe o usuário!</msg>
+<msg time="2026-10-19T12:20:56.952375" level="INFO">${erro} = Informe o usuário!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.401892" elapsed="0.009825"/>
+<status status="PASS" start="2026-10-19T12:20:56.920342" elapsed="0.032155"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.412147" elapsed="0.000895"/>
+<status status="PASS" start="2026-10-19T12:20:56.952931" elapsed="0.000680"/>
 </kw>
 <arg>${EMPTY}</arg>
 <arg>admin</arg>
 <arg>Informe o usuário!</arg>
-<status status="PASS" start="2026-10-19T12:19:10.283615" elapsed="0.129683"/>
+<status status="PASS" start="2026-10-19T12:20:56.746059" elapsed="0.208200"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:10.283344" elapsed="0.130280"/>
+<status status="PASS" start="2026-10-19T12:20:56.745585" elapsed="0.210606"/>
 </test>
 <test id="s1-s1-t4" name="Login inválido - Informe a senha!" line="11">
 <kw name="Login inválido" owner="login_template">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.415757" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:20:56.958360" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.415548" elapsed="0.043536"/>
+<status status="PASS" start="2026-10-19T12:20:56.957038" elapsed="0.266053"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.459577" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:20:57.224450" level="INFO">Typing text '' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.459313" elapsed="0.072427"/>
+<status status="PASS" start="2026-10-19T12:20:57.223701" elapsed="0.321101"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.532269" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:20:57.545554" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.532054" elapsed="0.067178"/>
+<status status="PASS" start="2026-10-19T12:20:57.545244" elapsed="0.072069"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.612920" level="INFO">${erro} = Informe a senha!</msg>
+<msg time="2026-10-19T12:20:57.634841" level="INFO">${erro} = Informe a senha!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.599724" elapsed="0.013234"/>
+<status status="PASS" start="2026-10-19T12:20:57.617502" elapsed="0.017521"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.613110" elapsed="0.000296"/>
+<status status="PASS" start="2026-10-19T12:20:57.635804" elapsed="0.001047"/>
 </kw>
 <arg>admin</arg>
 <arg>${EMPTY}</arg>
 <arg>Informe a senha!</arg>
-<status status="PASS" start="2026-10-19T12:19:10.415021" elapsed="0.198444"/>
+<status status="PASS" start="2026-10-19T12:20:56.956743" elapsed="0.680212"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:10.414093" elapsed="0.199475"/>
+<status status="PASS" start="2026-10-19T12:20:56.956403" elapsed="0.680869"/>
 </test>
 <kw name="Fechar navegador" owner="login_template" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.614168" elapsed="0.262356"/>
+<status status="PASS" start="2026-10-19T12:20:57.639504" elapsed="0.343243"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:10.614039" elapsed="0.262637"/>
+<status status="PASS" start="2026-10-19T12:20:57.638775" elapsed="0.344634"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:18:59.801483" elapsed="11.075226"/>
+<status status="PASS" start="2026-10-19T12:20:39.731493" elapsed="18.252057"/>
 </suite>
 <suite id="s1-s2" name="Login Test" source="/Users/runner/work/robot-web-test/robot-web-test/test/login_test.robot">
 <test id="s1-s2-t1" name="Cenário: Login - Usuário e/ou senha incorretos!" line="6">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:10.884137" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:20:58.024805" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:10.883982" elapsed="2.348161"/>
+<status status="PASS" start="2026-10-19T12:20:58.024592" elapsed="3.614178"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:13.233123" elapsed="1.937867"/>
+<status status="PASS" start="2026-10-19T12:21:01.639177" elapsed="0.658171"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.178622" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:02.305117" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.171451" elapsed="0.007412"/>
+<status status="PASS" start="2026-10-19T12:21:02.298452" elapsed="0.007068"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:10.883618" elapsed="4.295436"/>
+<status status="PASS" start="2026-10-19T12:20:58.024186" elapsed="4.282085"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.180612" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:02.308147" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.180336" elapsed="0.143350"/>
+<status status="PASS" start="2026-10-19T12:21:02.307450" elapsed="0.234477"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.324672" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:02.543067" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.323931" elapsed="0.166405"/>
+<status status="PASS" start="2026-10-19T12:21:02.542451" elapsed="0.158889"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.491167" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:02.701875" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.490905" elapsed="0.084556"/>
+<status status="PASS" start="2026-10-19T12:21:02.701603" elapsed="0.048944"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:15.179914" elapsed="0.395674"/>
+<status status="PASS" start="2026-10-19T12:21:02.306900" elapsed="0.443763"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Usuário e/ou senha incorretos!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.602034" level="INFO">${erro} = Usuário e/ou senha incorretos!</msg>
+<msg time="2026-10-19T12:21:02.805514" level="INFO">${erro} = Usuário e/ou senha incorretos!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.576623" elapsed="0.025453"/>
+<status status="PASS" start="2026-10-19T12:21:02.751200" elapsed="0.054368"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.602433" elapsed="0.000452"/>
+<status status="PASS" start="2026-10-19T12:21:02.805821" elapsed="0.000821"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.602988" elapsed="0.225059"/>
+<status status="PASS" start="2026-10-19T12:21:02.806783" elapsed="0.205429"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:15.575788" elapsed="0.252392"/>
+<status status="PASS" start="2026-10-19T12:21:02.750888" elapsed="0.261484"/>
 </kw>
 <tag>@Incorretos</tag>
-<status status="PASS" start="2026-10-19T12:19:10.882908" elapsed="4.945682"/>
+<status status="PASS" start="2026-10-19T12:20:58.023799" elapsed="4.988742"/>
 </test>
 <test id="s1-s2-t2" name="Cenário: Login - Informe usuário e senha!" line="12">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:15.830956" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:03.014449" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:15.830795" elapsed="1.987487"/>
+<status status="PASS" start="2026-10-19T12:21:03.014207" elapsed="2.667670"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:17.818650" elapsed="0.548081"/>
+<status status="PASS" start="2026-10-19T12:21:05.683126" elapsed="0.527342"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.371743" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:06.216754" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.367222" elapsed="0.004625"/>
+<status status="PASS" start="2026-10-19T12:21:06.210894" elapsed="0.006083"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:15.830420" elapsed="2.541535"/>
+<status status="PASS" start="2026-10-19T12:21:03.013366" elapsed="3.203776"/>
 </kw>
 <kw name="Quando inserir o login &quot;&quot; e a senha &quot;&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.372756" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:06.219194" level="INFO">Typing text '' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.372506" elapsed="0.068460"/>
+<status status="PASS" start="2026-10-19T12:21:06.218713" elapsed="0.064038"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.441389" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:06.283207" level="INFO">Typing text '' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.441168" elapsed="0.085960"/>
+<status status="PASS" start="2026-10-19T12:21:06.282976" elapsed="0.103021"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.528350" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:06.387019" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.527737" elapsed="0.061223"/>
+<status status="PASS" start="2026-10-19T12:21:06.386255" elapsed="0.081205"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:18.372195" elapsed="0.216896"/>
+<status status="PASS" start="2026-10-19T12:21:06.217606" elapsed="0.250021"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe usuário e senha!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.605166" level="INFO">${erro} = Informe usuário e senha!</msg>
+<msg time="2026-10-19T12:21:06.483264" level="INFO">${erro} = Informe usuário e senha!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.589552" elapsed="0.016114"/>
+<status status="PASS" start="2026-10-19T12:21:06.468088" elapsed="0.015680"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.606159" elapsed="0.000854"/>
+<status status="PASS" start="2026-10-19T12:21:06.483992" elapsed="0.000495"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.607293" elapsed="0.090990"/>
+<status status="PASS" start="2026-10-19T12:21:06.484600" elapsed="0.213475"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:18.589305" elapsed="0.109103"/>
+<status status="PASS" start="2026-10-19T12:21:06.467812" elapsed="0.230408"/>
 </kw>
 <tag>@EmBranco</tag>
-<status status="PASS" start="2026-10-19T12:19:15.829310" elapsed="2.869227"/>
+<status status="PASS" start="2026-10-19T12:21:03.012885" elapsed="3.685498"/>
 </test>
 <test id="s1-s2-t3" name="Cenário: Login - Informe o usuário!" line="18">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:18.701088" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:06.699885" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:18.700453" elapsed="1.880176"/>
+<status status="PASS" start="2026-10-19T12:21:06.699663" elapsed="5.565154"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:20.581110" elapsed="0.495737"/>
+<status status="PASS" start="2026-10-19T12:21:12.269445" elapsed="0.087198"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.083980" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:12.365645" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.077462" elapsed="0.006624"/>
+<status status="PASS" start="2026-10-19T12:21:12.356935" elapsed="0.008845"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:18.699271" elapsed="2.384920"/>
+<status status="PASS" start="2026-10-19T12:21:06.699161" elapsed="5.666800"/>
 </kw>
 <kw name="Quando inserir o login &quot;&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.085801" level="INFO">Typing text '' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:12.368136" level="INFO">Typing text '' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.085166" elapsed="0.086244"/>
+<status status="PASS" start="2026-10-19T12:21:12.367615" elapsed="0.082325"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.171826" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:12.451396" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.171610" elapsed="0.118345"/>
+<status status="PASS" start="2026-10-19T12:21:12.450453" elapsed="0.152498"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.290393" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:12.603732" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.290181" elapsed="0.052126"/>
+<status status="PASS" start="2026-10-19T12:21:12.603399" elapsed="0.042574"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:21.084425" elapsed="0.258203"/>
+<status status="PASS" start="2026-10-19T12:21:12.366542" elapsed="0.279572"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe o usuário!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.360166" level="INFO">${erro} = Informe o usuário!</msg>
+<msg time="2026-10-19T12:21:12.689540" level="INFO">${erro} = Informe o usuário!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.344675" elapsed="0.015533"/>
+<status status="PASS" start="2026-10-19T12:21:12.647299" elapsed="0.042291"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.360380" elapsed="0.000375"/>
+<status status="PASS" start="2026-10-19T12:21:12.689875" elapsed="0.000877"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.360843" elapsed="0.154377"/>
+<status status="PASS" start="2026-10-19T12:21:12.690920" elapsed="0.260082"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:21.343439" elapsed="0.172052"/>
+<status status="PASS" start="2026-10-19T12:21:12.646903" elapsed="0.304230"/>
 </kw>
 <tag>@SemUsuário</tag>
-<status status="PASS" start="2026-10-19T12:19:18.698785" elapsed="2.816949"/>
+<status status="PASS" start="2026-10-19T12:21:06.698667" elapsed="6.252876"/>
 </test>
 <test id="s1-s2-t4" name="Cenário: Login - Informe a senha!" line="24">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:21.517080" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:12.957780" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:21.516793" elapsed="1.649308"/>
+<status status="PASS" start="2026-10-19T12:21:12.956523" elapsed="2.029564"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.166466" elapsed="0.368325"/>
+<status status="PASS" start="2026-10-19T12:21:14.986471" elapsed="0.501938"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.540603" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:15.495638" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.534985" elapsed="0.005791"/>
+<status status="PASS" start="2026-10-19T12:21:15.488728" elapsed="0.007021"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:21.516394" elapsed="2.024507"/>
+<status status="PASS" start="2026-10-19T12:21:12.954808" elapsed="2.541046"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.542953" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:15.496606" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.541460" elapsed="0.110645"/>
+<status status="PASS" start="2026-10-19T12:21:15.496370" elapsed="0.098976"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.653086" level="INFO">Typing text '' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:15.595770" level="INFO">Typing text '' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.652576" elapsed="0.054961"/>
+<status status="PASS" start="2026-10-19T12:21:15.595552" elapsed="0.072020"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.707942" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:15.668098" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.707751" elapsed="0.049181"/>
+<status status="PASS" start="2026-10-19T12:21:15.667840" elapsed="0.045212"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:23.541164" elapsed="0.215875"/>
+<status status="PASS" start="2026-10-19T12:21:15.496077" elapsed="0.217277"/>
 </kw>
 <kw name="Então apresentará uma mensagem de &quot;Informe a senha!&quot;" owner="login_steps" source_name="Então apresentará uma mensagem de &quot;${message}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.771386" level="INFO">${erro} = Informe a senha!</msg>
+<msg time="2026-10-19T12:21:15.733477" level="INFO">${erro} = Informe a senha!</msg>
 <var>${erro}</var>
 <arg>${mensagem}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.757471" elapsed="0.013979"/>
+<status status="PASS" start="2026-10-19T12:21:15.714197" elapsed="0.019325"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${erro}</arg>
 <arg>${message}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.771882" elapsed="0.000546"/>
+<status status="PASS" start="2026-10-19T12:21:15.733713" elapsed="0.000479"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.772556" elapsed="0.143652"/>
+<status status="PASS" start="2026-10-19T12:21:15.734322" elapsed="0.150399"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:23.757223" elapsed="0.159286"/>
+<status status="PASS" start="2026-10-19T12:21:15.713810" elapsed="0.171252"/>
 </kw>
 <tag>@SemSenha</tag>
-<status status="PASS" start="2026-10-19T12:19:21.516029" elapsed="2.400928"/>
+<status status="PASS" start="2026-10-19T12:21:12.952575" elapsed="2.933064"/>
 </test>
 <test id="s1-s2-t5" name="Cenário: Login - Admin" line="30">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:23.918791" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:15.887119" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:23.918616" elapsed="1.956110"/>
+<status status="PASS" start="2026-10-19T12:21:15.886960" elapsed="2.177471"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:25.875128" elapsed="0.659881"/>
+<status status="PASS" start="2026-10-19T12:21:18.068122" elapsed="0.267876"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:26.544757" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:18.343780" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:26.535249" elapsed="0.009603"/>
+<status status="PASS" start="2026-10-19T12:21:18.336195" elapsed="0.007702"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:23.918241" elapsed="2.626713"/>
+<status status="PASS" start="2026-10-19T12:21:15.886541" elapsed="2.457551"/>
 </kw>
 <kw name="Quando inserir o login &quot;admin&quot; e a senha &quot;admin&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:26.545743" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:18.345570" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:26.545500" elapsed="0.156269"/>
+<status status="PASS" start="2026-10-19T12:21:18.345023" elapsed="0.151029"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:26.702795" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:18.496537" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:26.702247" elapsed="0.102782"/>
+<status status="PASS" start="2026-10-19T12:21:18.496287" elapsed="0.090255"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:26.805902" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:18.587135" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:26.805321" elapsed="0.456450"/>
+<status status="PASS" start="2026-10-19T12:21:18.586821" elapsed="0.619684"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:26.545163" elapsed="0.716707"/>
+<status status="PASS" start="2026-10-19T12:21:18.344518" elapsed="0.862140"/>
 </kw>
 <kw name="Então apresentará a home do &quot;Administrador&quot;" owner="home_steps" source_name="Então apresentará a home do &quot;${logged}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:27.279318" level="INFO">${logado} = Administrador</msg>
+<msg time="2026-10-19T12:21:19.223435" level="INFO">${logado} = Administrador</msg>
 <var>${logado}</var>
 <arg>${home}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:27.262287" elapsed="0.017076"/>
+<status status="PASS" start="2026-10-19T12:21:19.207193" elapsed="0.016302"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${logado}</arg>
 <arg>${logged}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:27.279542" elapsed="0.000336"/>
+<status status="PASS" start="2026-10-19T12:21:19.223768" elapsed="0.000726"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:28.196875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-19T12:21:20.232159" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-10-19T12:19:27.280021" elapsed="0.916987"/>
+<status status="PASS" start="2026-10-19T12:21:19.224655" elapsed="1.007641"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:28.197209" elapsed="0.134779"/>
+<status status="PASS" start="2026-10-19T12:21:20.232501" elapsed="0.161392"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:27.262038" elapsed="1.070224"/>
+<status status="PASS" start="2026-10-19T12:21:19.206906" elapsed="1.187124"/>
 </kw>
 <tag>@Admin</tag>
-<status status="PASS" start="2026-10-19T12:19:23.917533" elapsed="4.415052"/>
+<status status="PASS" start="2026-10-19T12:21:15.886105" elapsed="4.508117"/>
 </test>
 <test id="s1-s2-t6" name="Cenário: Login - User" line="36">
 <kw name="Dado que desejo acessar o sistema" owner="login_steps">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:28.336126" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:20.395638" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:28.335813" elapsed="1.726066"/>
+<status status="PASS" start="2026-10-19T12:21:20.395444" elapsed="1.917299"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.062461" elapsed="0.404906"/>
+<status status="PASS" start="2026-10-19T12:21:22.313451" elapsed="0.586764"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:30.474936" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:22.923445" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.467874" elapsed="0.007468"/>
+<status status="PASS" start="2026-10-19T12:21:22.901227" elapsed="0.022494"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:28.334740" elapsed="2.140868"/>
+<status status="PASS" start="2026-10-19T12:21:20.395051" elapsed="2.528808"/>
 </kw>
 <kw name="Quando inserir o login &quot;user&quot; e a senha &quot;user&quot; e clicar em Entrar" owner="login_steps" source_name="Quando inserir o login &quot;${login}&quot; e a senha &quot;${password}&quot; e clicar em Entrar">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:30.476399" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:22.927616" level="INFO">Typing text 'user' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.476199" elapsed="0.130789"/>
+<status status="PASS" start="2026-10-19T12:21:22.927077" elapsed="0.121641"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:30.607491" level="INFO">Typing text 'user' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:23.049101" level="INFO">Typing text 'user' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.607201" elapsed="0.066930"/>
+<status status="PASS" start="2026-10-19T12:21:23.048909" elapsed="0.064693"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:30.675213" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:23.114233" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.674627" elapsed="0.281711"/>
+<status status="PASS" start="2026-10-19T12:21:23.113892" elapsed="0.251112"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:30.475873" elapsed="0.480575"/>
+<status status="PASS" start="2026-10-19T12:21:22.924793" elapsed="0.440351"/>
 </kw>
 <kw name="Então apresentará a home do &quot;Usuário&quot;" owner="home_steps" source_name="Então apresentará a home do &quot;${logged}&quot;">
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:31.063414" level="INFO">${logado} = Usuário</msg>
+<msg time="2026-10-19T12:21:23.393993" level="INFO">${logado} = Usuário</msg>
 <var>${logado}</var>
 <arg>${home}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:30.957546" elapsed="0.105912"/>
+<status status="PASS" start="2026-10-19T12:21:23.366364" elapsed="0.027683"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${logado}</arg>
 <arg>${logged}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:31.063630" elapsed="0.001097"/>
+<status status="PASS" start="2026-10-19T12:21:23.394993" elapsed="0.000470"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:31.370556" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-19T12:21:23.717560" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-10-19T12:19:31.064980" elapsed="0.305770"/>
+<status status="PASS" start="2026-10-19T12:21:23.395691" elapsed="0.322025"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:31.370915" elapsed="0.167519"/>
+<status status="PASS" start="2026-10-19T12:21:23.718350" elapsed="0.205041"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:30.957204" elapsed="0.581653"/>
+<status status="PASS" start="2026-10-19T12:21:23.365934" elapsed="0.557596"/>
 </kw>
 <tag>@User</tag>
-<status status="PASS" start="2026-10-19T12:19:28.333367" elapsed="3.205619"/>
+<status status="PASS" start="2026-10-19T12:21:20.394557" elapsed="3.529148"/>
 </test>
-<status status="PASS" start="2026-10-19T12:19:10.877242" elapsed="20.662074"/>
+<status status="PASS" start="2026-10-19T12:20:57.985226" elapsed="25.940161"/>
 </suite>
 <suite id="s1-s3" name="Login Valido" source="/Users/runner/work/robot-web-test/robot-web-test/test/login_valido.robot">
 <kw name="Abrir navegador" owner="login_template" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:31.542381" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
+<msg time="2026-10-19T12:21:23.929638" level="INFO">Opening browser 'chrome' to base url 'https://rlhorochovec.github.io/qa/index.html'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-10-19T12:19:31.541990" elapsed="1.931828"/>
+<status status="PASS" start="2026-10-19T12:21:23.929399" elapsed="2.093383"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:33.481788" level="INFO">Page title is 'Login'.</msg>
+<msg time="2026-10-19T12:21:26.028373" level="INFO">Page title is 'Login'.</msg>
 <arg>Login</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-10-19T12:19:33.474541" elapsed="0.007359"/>
+<status status="PASS" start="2026-10-19T12:21:26.023244" elapsed="0.005240"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-10-19T12:19:33.482154" elapsed="0.426084"/>
+<status status="PASS" start="2026-10-19T12:21:26.028642" elapsed="0.251725"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:31.541626" elapsed="2.366716"/>
+<status status="PASS" start="2026-10-19T12:21:23.928891" elapsed="2.351603"/>
 </kw>
 <test id="s1-s3-t1" name="Login válido - Admin" line="8">
 <kw name="Login válido" owner="login_template">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:33.910011" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
+<msg time="2026-10-19T12:21:26.282000" level="INFO">Typing text 'admin' into text field 'id = login'.</msg>
 <arg>${usuario}</arg>
 <arg>${login}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:33.909793" elapsed="0.139926"/>
+<status status="PASS" start="2026-10-19T12:21:26.281720" elapsed="0.114711"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:34.050168" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
+<msg time="2026-10-19T12:21:26.397108" level="INFO">Typing text 'admin' into text field 'id = senha'.</msg>
 <arg>${senha}</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.049947" elapsed="0.071490"/>
+<status status="PASS" start="2026-10-19T12:21:26.396712" elapsed="0.062276"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:34.122362" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
+<msg time="2026-10-19T12:21:26.459449" level="INFO">Clicking element 'xpath = //*[text()="Entrar"]'.</msg>
 <arg>${entrar}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.121881" elapsed="0.226087"/>
+<status status="PASS" start="2026-10-19T12:21:26.459204" elapsed="0.285078"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:34.371840" level="INFO">${logado} = Administrador</msg>
+<msg time="2026-10-19T12:21:26.860940" level="INFO">${logado} = Administrador</msg>
 <var>${logado}</var>
 <arg>${home}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.349096" elapsed="0.022788"/>
+<status status="PASS" start="2026-10-19T12:21:26.744549" elapsed="0.116447"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${logado}</arg>
 <arg>${logged}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.372052" elapsed="0.000345"/>
+<status status="PASS" start="2026-10-19T12:21:26.861191" elapsed="0.002465"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-10-19T12:19:34.829221" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-19T12:21:27.422429" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.372537" elapsed="0.457043"/>
+<status status="PASS" start="2026-10-19T12:21:26.864137" elapsed="0.559311"/>
 </kw>
 <arg>admin</arg>
 <arg>admin</arg>
 <arg>Administrador</arg>
-<status status="PASS" start="2026-10-19T12:19:33.909231" elapsed="0.920607"/>
+<status status="PASS" start="2026-10-19T12:21:26.281351" elapsed="1.142726"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:33.908447" elapsed="0.921771"/>
+<status status="PASS" start="2026-10-19T12:21:26.280636" elapsed="1.143946"/>
 </test>
 <kw name="Fechar navegador" owner="login_template" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-10-19T12:19:34.832249" elapsed="0.115755"/>
+<status status="PASS" start="2026-10-19T12:21:27.427159" elapsed="0.162312"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:34.831517" elapsed="0.116618"/>
+<status status="PASS" start="2026-10-19T12:21:27.426851" elapsed="0.162928"/>
 </kw>
-<status status="PASS" start="2026-10-19T12:19:31.539658" elapsed="3.408510"/>
+<status status="PASS" start="2026-10-19T12:21:23.925855" elapsed="3.664007"/>
 </suite>
-<status status="PASS" start="2026-10-19T12:18:59.783374" elapsed="35.165388"/>
+<status status="PASS" start="2026-10-19T12:20:39.713029" elapsed="47.878264"/>
 </suite>
 <statistics>
 <total>
