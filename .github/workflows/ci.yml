@@ -1,55 +1,64 @@
-name: robot-web-test
+name: Testes Web com Robot Framework
 
 on:
   push:
-    branches: [ "develop", "main" ]
+    branches:
+      - develop
+      - main
   workflow_dispatch:
 
 jobs:
   test:
+    name: Execução do Robot Framework
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repository
+      # Verifica (faz checkout) o seu repositório no $GITHUB_WORKSPACE para o job poder acessá-lo
+      - name: Verificar repositório
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      # Configura a versão do Python no ambiente executor (runner)
+      - name: Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      # Instala o pip atualizado e as dependências listadas no arquivo requirements.txt
+      - name: Instalar dependências
         run: |
           python -m pip install --upgrade pip
-          # Install additional dependencies if needed
+          # Instala dependências adicionais se necessário
           pip install -r requirements.txt
 
-      - name: Run Robot Framework tests
+      # Executa os testes do Robot Framework com lógica de reexecução (rerun) automática em caso de falhas
+      - name: Executar testes do Robot Framework
         run: |
           if ! robot --outputdir report --exclude skip test/; then
-              echo "Robot Framework tests failed. Rerunning failed tests..."
+              echo "Os testes do Robot Framework falharam. Reexecutando os testes que falharam..."
               if [ -f report/output.xml ]; then
                   robot --rerunfailed report/output.xml --outputdir report_rerun test/ || true
                   if [ -f report_rerun/output.xml ]; then
                       rebot --output report/output.xml --log report/log.html --report report/report.html --merge report/output.xml report_rerun/output.xml
                   else
-                      echo "No output.xml file found from rerun. Skipping merge."
+                      echo "Nenhum arquivo output.xml encontrado na reexecução. Pulando a mesclagem."
                   fi
               else
-                  echo "No output.xml file found. Cannot rerun failed tests."
+                  echo "Nenhum arquivo output.xml encontrado. Não é possível reexecutar os testes com falha."
               fi
           fi
 
-          echo "Script execution completed"
+          echo "Execução do script concluída"
         continue-on-error: true
 
-      - name: Upload artifact
+      # Faz o upload do diretório de relatórios gerados como artefato do workflow
+      - name: Enviar artefato do relatório
         uses: actions/upload-artifact@v4
         with:
           path: ./report
           name: report
           
-      - name: Deploy Robot Report to GitHub Pages
+      # Publica os relatórios do Robot Framework no GitHub Pages
+      - name: Publicar relatório do Robot no GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
